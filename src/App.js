@@ -15,17 +15,17 @@ function App() {
          <Container>
           <Nav>
               <Nav.Link href="/">Home</Nav.Link>
-              <NavDropdown title="Poems">
+              <NavDropdown title="Poems" menuVariant="dark">
                 <NavDropdown.Item href="/poem1">Poem 1</NavDropdown.Item>
                 <NavDropdown.Item href="/poem2">Poem 2</NavDropdown.Item>
                 <NavDropdown.Item href="/poem3">Poem 3</NavDropdown.Item>
                 <NavDropdown.Item href="/poem4">Poem 4</NavDropdown.Item>
               </NavDropdown>
-              <NavDropdown title="Stories">
+              <NavDropdown title="Stories" menuVariant="dark">
                 <NavDropdown.Item href="/littleToe">Little Toe</NavDropdown.Item>
                 <NavDropdown.Item href="/shark">There is a Shark in my Bathtub</NavDropdown.Item>
               </NavDropdown>
-              <NavDropdown title="Videos">
+              <NavDropdown title="Videos" menuVariant="dark">
                 <NavDropdown.Item href="/video1">Video 1</NavDropdown.Item>
                 <NavDropdown.Item href="/video2">Video 2</NavDropdown.Item>
               </NavDropdown>
