@@ -7,9 +7,5 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: black;
   background-image: url("purple-flower-background.jpg");
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  padding-top: 5rem;
 }
