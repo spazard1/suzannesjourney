@@ -1,14 +1,14 @@
-import React, { Suspense } from 'react';
+import React, { Suspense, lazy } from 'react';
 import { Navbar, Container, Nav, NavDropdown } from 'react-bootstrap';
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import Home from './Home';
-
-import LittleToe from "./stories/LittleToe";
 
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
+  const LittleToe = lazy(() => import("./stories/LittleToe.jsx"));
+
   return (
     <div>
       <Navbar bg="dark" variant="dark" fixed="top">

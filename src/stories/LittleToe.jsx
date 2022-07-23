@@ -1,7 +1,11 @@
 
-const LittleToe = () => {
+import React from "react";
+import TextContent from "../TextContent";
 
-  return "Little Toe Text"
+import littleToe from "./littleToe.txt";
+
+const LittleToe = () => {
+  return <TextContent messageLocation={littleToe} />;
 }
 
 export default LittleToe;
