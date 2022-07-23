@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 
+import "./TextContent.css";
+
 const TextContent = ({messageLocation}) => {
   const [message, setMessage] = useState();
 
@@ -7,14 +9,12 @@ const TextContent = ({messageLocation}) => {
     fetch(messageLocation)
       .then(r => r.text())
       .then(text => {
-        setMessage(text.replace("\n", "<br />"));
+        setMessage(text.replaceAll("\n", "<br />"));
       });
   }, [messageLocation]);
 
   return (
-    <div>
-      {message}
-    </div>
+    <div dangerouslySetInnerHTML={{ __html: message}} />
   );
 }
 

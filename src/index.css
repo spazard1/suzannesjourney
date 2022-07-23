@@ -7,5 +7,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: black;
   background-image: url("purple-flower-background.jpg");
-  padding-top: 5rem;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  padding-top: 4.5rem;
 }

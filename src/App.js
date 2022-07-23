@@ -7,6 +7,8 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
+  const ToBeWell = lazy(() => import("./poems/ToBeWell.jsx"));
+
   const LittleToe = lazy(() => import("./stories/LittleToe.jsx"));
 
   return (
@@ -16,7 +18,7 @@ function App() {
           <Nav>
               <Nav.Link href="/">Home</Nav.Link>
               <NavDropdown title="Poems" menuVariant="dark">
-                <NavDropdown.Item href="/poem1">Poem 1</NavDropdown.Item>
+                <NavDropdown.Item href="/toBeWell">To Be Well</NavDropdown.Item>
                 <NavDropdown.Item href="/poem2">Poem 2</NavDropdown.Item>
                 <NavDropdown.Item href="/poem3">Poem 3</NavDropdown.Item>
                 <NavDropdown.Item href="/poem4">Poem 4</NavDropdown.Item>
@@ -39,6 +41,8 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/littleToe" element={<LittleToe />} />
+              
+              <Route path="/toBeWell" element={<ToBeWell />} />
 
               <Route path="*" element={<Navigate replace to="/" />} />
             </Routes>
