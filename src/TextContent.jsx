@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 
 import "./TextContent.css";
 
-const TextContent = ({messageLocation}) => {
+const TextContent = ({title, date, messageLocation}) => {
   const [message, setMessage] = useState();
 
   useEffect(() => {
@@ -14,7 +14,13 @@ const TextContent = ({messageLocation}) => {
   }, [messageLocation]);
 
   return (
-    <div dangerouslySetInnerHTML={{ __html: message}} />
+    <div className="textContainer">
+      <div className="title">{title}</div>
+      {date &&
+        <div className="date">{date}</div> 
+      }
+      <div className="text" dangerouslySetInnerHTML={{ __html: message}} />
+    </div>
   );
 }
 

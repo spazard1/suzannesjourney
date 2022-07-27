@@ -5,7 +5,7 @@ import TextContent from "../TextContent";
 import content from "./toBeWell.txt";
 
 const Content = () => {
-  return <TextContent messageLocation={content} />;
+  return <TextContent title="To Be Well" messageLocation={content} />;
 }
 
 export default Content;
