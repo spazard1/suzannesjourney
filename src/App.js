@@ -24,7 +24,7 @@ function App() {
         "Cancer is a Chameleon": "CancerChameleon", 
         "Can't Die Yet": "CantDieYet",
         "Rub A Dub Dub": "RubADubDub",
-        "There's a Shark In My Bathtub": "TheresASharkInMyBathtub",
+        "There's a Shark In My Bathtub!": "TheresASharkInMyBathtub",
       },
       Stories: {
         "Little Toe": "LittleToe",
