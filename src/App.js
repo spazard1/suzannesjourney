@@ -9,16 +9,28 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 function App() {
 
   const itemsList = useMemo(() => {
+    /*
+      Adding a new poem/story/video:
+      Ordering here matters for how it will show up in the links.
+      
+      1. Add a new line under the correct type, such as Poems or Stories.
+      2. Separate the title and the file name with a colon, both surrounded by quotes.
+      3. Make sure the line ends with a comma.
+    */
+   
     return {
       Poems: {
-      "To Be Well" : "ToBeWell",
-      "Cancer is a Chameleon": "CancerChameleon", 
-      "Can't Die Yet": "CantDieYet",
-      "Rub A Dub Dub": "RubADubDub",
-      "There's a Shark In My Bathtub": "TheresASharkInMyBathtub"
+        "To Be Well" : "ToBeWell",
+        "Cancer is a Chameleon": "CancerChameleon", 
+        "Can't Die Yet": "CantDieYet",
+        "Rub A Dub Dub": "RubADubDub",
+        "There's a Shark In My Bathtub": "TheresASharkInMyBathtub",
       },
       Stories: {
-        "Little Toe": "LittleToe"
+        "Little Toe": "LittleToe",
+      },
+      Videos: {
+        "St John's Gala": "StJohnsGala",
       }
     }
   }, []);
