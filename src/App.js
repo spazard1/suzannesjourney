@@ -8,6 +8,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   const ToBeWell = lazy(() => import("./poems/ToBeWell.jsx"));
+  const CancerChameleon = lazy(() => import("./poems/CancerChameleon.jsx"));
 
   const LittleToe = lazy(() => import("./stories/LittleToe.jsx"));
 
@@ -19,7 +20,7 @@ function App() {
               <Nav.Link href="/">Home</Nav.Link>
               <NavDropdown title="Poems" menuVariant="dark">
                 <NavDropdown.Item href="/toBeWell">To Be Well</NavDropdown.Item>
-                <NavDropdown.Item href="/poem2">Poem 2</NavDropdown.Item>
+                <NavDropdown.Item href="/cancerChameleon">Caner is a Chameleon</NavDropdown.Item>
                 <NavDropdown.Item href="/poem3">Poem 3</NavDropdown.Item>
                 <NavDropdown.Item href="/poem4">Poem 4</NavDropdown.Item>
               </NavDropdown>
@@ -43,6 +44,7 @@ function App() {
               <Route path="/littleToe" element={<LittleToe />} />
               
               <Route path="/toBeWell" element={<ToBeWell />} />
+              <Route path="/cancerChameleon" element={<CancerChameleon />} />
 
               <Route path="*" element={<Navigate replace to="/" />} />
             </Routes>
