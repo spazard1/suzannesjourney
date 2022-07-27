@@ -10,6 +10,7 @@ function App() {
   const ToBeWell = lazy(() => import("./poems/ToBeWell.jsx"));
   const CancerChameleon = lazy(() => import("./poems/CancerChameleon.jsx"));
   const CantDieYet = lazy(() => import("./poems/CantDieYet.jsx"));
+  const RubADubDub = lazy(() => import("./poems/RubADubDub.jsx"));
 
   const LittleToe = lazy(() => import("./stories/LittleToe.jsx"));
 
@@ -25,6 +26,7 @@ function App() {
                 <NavDropdown.Item href="/toBeWell">To Be Well</NavDropdown.Item>
                 <NavDropdown.Item href="/cancerChameleon">Cancer is a Chameleon</NavDropdown.Item>
                 <NavDropdown.Item href="/cantDieYet">Can't Die Yet</NavDropdown.Item>
+                <NavDropdown.Item href="/rubADubDub">Rub A Dub Dub</NavDropdown.Item>
               </NavDropdown>
               <NavDropdown title="Stories" menuVariant="dark">
                 <NavDropdown.Item href="/littleToe">Little Toe</NavDropdown.Item>
@@ -46,6 +48,7 @@ function App() {
               <Route path="/toBeWell" element={<ToBeWell />} />
               <Route path="/cancerChameleon" element={<CancerChameleon />} />
               <Route path="/cantDieYet" element={<CantDieYet />} />
+              <Route path="/rubADubDub" element={<RubADubDub />} />
 
               <Route path="/stJohnsGala" element={<StJohnsGala />} />
 
