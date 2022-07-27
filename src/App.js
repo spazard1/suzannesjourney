@@ -1,7 +1,5 @@
-import React, { Suspense, lazy, useEffect, useMemo, useState } from 'react';
+import React, { Suspense, lazy, useEffect, useMemo, useState, useCallback } from 'react';
 import { Navbar, Container, Nav, NavDropdown } from 'react-bootstrap';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Home from './Home';
 
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -35,29 +33,39 @@ function App() {
     }
   }, []);
 
+  const Home = useMemo(() => lazy(() => import("./Home.jsx")), []);
+
   const [lazyElements, setLazyElements] = useState({});
+  const [activeTitle, setActiveTitle] = useState(window.location.pathname.substring(1));
+
+  const onClickActiveTitle = useCallback((title) => {
+    window.history.replaceState(null, "Suzanne's Journey", "/" + title);
+    setActiveTitle(title);
+  }, []);
 
   useEffect(() => {
     const newLazyElements = {};
     for (const [itemKey, item] of Object.entries(itemsList)) {
-      for (const [titleKey, titleFileName] of Object.entries(item)) {
-        newLazyElements[titleKey] = lazy(() => import("./" + itemKey.toLowerCase() + "/" + titleFileName + ".jsx"));
+      for (const [, titleFileName] of Object.entries(item)) {
+        newLazyElements[titleFileName] = lazy(() => import("./" + itemKey.toLowerCase() + "/" + titleFileName + ".jsx"));
       }
     }
 
     setLazyElements(newLazyElements);
   }, [itemsList])
 
+  const TextContentHelper = activeTitle === "" ? Home : lazyElements[activeTitle];
+
   return (
     <div>
       <Navbar bg="dark" variant="dark" fixed="top">
          <Container>
           <Nav>
-              <Nav.Link href="/">Home</Nav.Link>
+              <Nav.Link onClick={() => onClickActiveTitle("")}>Home</Nav.Link>
               {Object.keys(itemsList).map(item => 
                 <NavDropdown key={item} title={item} menuVariant="dark">
                   {Object.keys(itemsList[item]).map(titleKey => 
-                    <NavDropdown.Item key={titleKey} href={"/" + itemsList[item][titleKey]}>{titleKey}</NavDropdown.Item>
+                    <NavDropdown.Item key={titleKey} onClick={() => onClickActiveTitle(itemsList[item][titleKey])}>{titleKey}</NavDropdown.Item>
                     )}
                 </NavDropdown>
               )}
@@ -67,23 +75,11 @@ function App() {
 
       {lazyElements &&
         <div className="mainTextContainer">
-          <BrowserRouter>
             <Suspense>
-              <Routes>
-                <Route path="/" element={<Home />} />
-                {Object.keys(itemsList).map(item => 
-                  (Object.keys(itemsList[item]).map(titleKey => {
-                      if (!(titleKey in lazyElements)) {
-                        return null;
-                      }
-                      const RouteHelper = lazyElements[titleKey];
-                      return <Route key={titleKey} path={"/" + itemsList[item][titleKey]} element={<RouteHelper />} />
-                    }
-                  ))
-                )}
-              </Routes>
+              {TextContentHelper &&
+                <TextContentHelper />
+              }
             </Suspense>
-          </BrowserRouter>
         </div>
       }
     </div>
