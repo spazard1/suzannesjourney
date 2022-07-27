@@ -1,17 +1,5 @@
-.App {
-  font-family: serif;
-  text-align: center;
-  color: white;
-  font-size: 8vh;
-  background-color: rgba(0,0,0,.7);
-  border: 15px solid rgba(0,0,0,.5);
-  border-radius: 15px;
-  margin-top: 3vh;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
-}
-
-.sub {
-  font-size: 4vh;
+.center {
+ display: flex;
+ justify-content: center;
+ align-items: center;
 }
