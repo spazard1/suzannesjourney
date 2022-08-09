@@ -2,10 +2,10 @@
 import React from "react";
 import TextContent from "../TextContent";
 
-import littleToe from "./littleToe.txt";
+import content from "./littleToe.txt";
 
 const LittleToe = () => {
-  return <TextContent messageLocation={littleToe} />;
+  return <TextContent title="The Story of Little Toe" date="October 2000" messageLocation={content} />;
 }
 
 export default LittleToe;
