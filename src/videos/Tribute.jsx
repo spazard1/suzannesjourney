@@ -8,7 +8,7 @@ const Content = () => {
         src="https://www.youtube.com/embed/E-dAfkUTbe0"
         title="YouTube video player" frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen>  
+        allowFullScreen>  
       </iframe>
     </div>);
 }
