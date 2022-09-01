@@ -17,19 +17,29 @@ function App() {
     */
    
     return {
-      Poems: {
-        "To Be Well" : "ToBeWell",
-        "Cancer is a Chameleon": "CancerChameleon", 
-        "Can't Die Yet": "CantDieYet",
-        "Rub a Dub Dub": "RubADubDub",
-        "There's a Shark in My Bathtub!": "TheresASharkInMyBathtub",
-      },
-      Stories: {
-        "Little Toe": "LittleToe",
-      },
-      Videos: {
-        "St John's Gala": "StJohnsGala",
-      }
+      Poems: [
+        {title: "To Be Well", path: "ToBeWell"},
+        {title: "Cancer is a Chameleon", path: "CancerIsAChameleon"}, 
+        {title: "Can't Die Yet", path: "CantDieYet"},
+        {title: "Rub a Dub Dub", path: "RubADubDub"},
+        {title: "There's a Shark in My Bathtub!", path: "TheresASharkInMyBathtub"},
+        {title: "55", path: "55"},
+        {title: "Anniversary", path: "Anniversary"},
+        {title: "Death... It's All Around...", path: "DeathItsAllAround"},
+        {title: "Every Instinct Told Me", path: "EveryInstinctToldMe"},
+        {title: "My Jabberwock", path: "MyJabberwock"},
+        {title: "The Elevator of Life", path: "TheElevatorOfLife"},
+        {title: "The Me I was Before You Robbed Me", path: "TheMeIWasBeforeYouRobbedMe"},
+        {title: "The Woman in the Mirror", path: "TheWomanInTheMirror"},
+      ],
+      Stories: [
+        {title: "Little Toe", path: "LittleToe"},
+      ],
+      Videos: [
+        {title: "St John's Gala", path: "StJohnsGala"},
+        {title: "Tribute", path: "Tribute"},
+        {title: "Memoriam Presentation", path: "MemoriamPresentation"},
+      ]
     }
   }, []);
 
@@ -46,8 +56,8 @@ function App() {
   useEffect(() => {
     const newLazyElements = {};
     for (const [itemKey, item] of Object.entries(itemsList)) {
-      for (const [, titleFileName] of Object.entries(item)) {
-        newLazyElements[titleFileName] = lazy(() => import("./" + itemKey.toLowerCase() + "/" + titleFileName + ".jsx"));
+      for (const writtenObject of item) {
+        newLazyElements[writtenObject.path] = lazy(() => import("./" + itemKey.toLowerCase() + "/" + writtenObject.path + ".jsx"));
       }
     }
 
@@ -64,8 +74,8 @@ function App() {
               <Nav.Link onClick={() => onClickActiveTitle("")}>Home</Nav.Link>
               {Object.keys(itemsList).map(item => 
                 <NavDropdown key={item} title={item} menuVariant="dark">
-                  {Object.keys(itemsList[item]).map(titleKey => 
-                    <NavDropdown.Item key={titleKey} onClick={() => onClickActiveTitle(itemsList[item][titleKey])}>{titleKey}</NavDropdown.Item>
+                  {itemsList[item].map(writtenObject => 
+                    <NavDropdown.Item key={writtenObject.title} onClick={() => onClickActiveTitle(writtenObject.path)}>{writtenObject.title}</NavDropdown.Item>
                     )}
                 </NavDropdown>
               )}
