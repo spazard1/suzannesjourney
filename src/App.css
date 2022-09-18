@@ -3,3 +3,19 @@
   justify-content: center;
   align-items: center;
 }
+
+a.content {
+  color: skyblue;
+}
+
+a.content:visited {
+  color: skyblue;
+}
+
+a.content:active {
+  color: cyan;
+}
+
+a.content:hover {
+  color: dodgerblue;
+}
