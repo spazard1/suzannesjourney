@@ -4,8 +4,8 @@ import TextContent from "../TextContent";
 
 import content from "./LittleToe.txt";
 
-const LittleToe = () => {
+const Content = () => {
   return <TextContent title="The Story of Little Toe" date="October 2000" messageLocation={content} />;
 }
 
-export default LittleToe;
+export default Content;

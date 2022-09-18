@@ -35,6 +35,7 @@ function App() {
       ],
       Stories: [
         {title: "Little Toe", path: "LittleToe"},
+        {title: "Nelson's 1994 Christmas Letter", path: "Nelsons1994ChristmasLetter"},
       ],
       Videos: [
         {title: "St John's Gala", path: "StJohnsGala"},
