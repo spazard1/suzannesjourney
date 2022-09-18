@@ -31,7 +31,7 @@ function App() {
         {title: "Every Instinct Told Me", path: "EveryInstinctToldMe"},
         {title: "My Jabberwock", path: "MyJabberwock"},
         {title: "The Woman in the Mirror", path: "TheWomanInTheMirror"},
-        {title: "Of Guppies And Girls", path: "OfGuppiesAndGirls"},
+        {title: "Of Guppies and Girls", path: "OfGuppiesAndGirls"},
       ],
       Stories: [
         {title: "Little Toe", path: "LittleToe"},
