@@ -1,3 +1,11 @@
+.homeContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  gap: 3vmax;
+}
+
 .mainTitle {
   font-size: 5vmin;
   font-family: serif;
@@ -9,9 +17,20 @@
   margin-left: auto;
   margin-right: auto;
   width: 60%;
-  margin-bottom: 2vh;
 }
 
 .mainSubTitle {
   font-size: 3vmin;
+}
+
+.coverPhoto {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.coverPhoto img {
+  width: 60%;
+  border: 4px solid rgba(0,0,0);
 }
