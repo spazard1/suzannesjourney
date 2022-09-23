@@ -37,11 +37,11 @@ function App() {
         {title: "Little Toe", path: "LittleToe"},
         {title: "1994 Christmas Letter", path: "Nelsons1994ChristmasLetter"},
       ],
-      Videos: [
-        {title: "St John's Gala", path: "StJohnsGala"},
-        {title: "Tribute", path: "Tribute"},
-        {title: "Memoriam Presentation", path: "MemoriamPresentation"},
-      ]
+      // Videos: [
+       //  {title: "St John's Gala", path: "StJohnsGala"},
+       //  {title: "Tribute", path: "Tribute"},
+       //  {title: "Memoriam Presentation", path: "MemoriamPresentation"},
+      // ]
     }
   }, []);
 
