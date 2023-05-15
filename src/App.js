@@ -88,11 +88,11 @@ function App() {
 
       {lazyElements &&
         <div className="mainTextContainer">
-            <Suspense>
-              {TextContentHelper &&
-                <TextContentHelper />
-              }
-            </Suspense>
+          <Suspense>
+            {TextContentHelper &&
+              <TextContentHelper />
+            }
+          </Suspense>
         </div>
       }
     </div>
