@@ -33,6 +33,8 @@ function App() {
         {title: "My Jabberwock", path: "MyJabberwock"},
         {title: "The Woman in the Mirror", path: "TheWomanInTheMirror"},
         {title: "Of Guppies and Girls", path: "OfGuppiesAndGirls"},
+        {title: "Waiting", path: "Waiting"},
+        {title: "Couchless in Culver City", path: "CouchlessInCulverCity"},
       ],
       Stories: [
         {title: "Little Toe", path: "LittleToe"},
@@ -44,9 +46,7 @@ function App() {
         {title: "Memoriam Presentation", path: "MemoriamPresentation"},
       ],
       Hidden: [
-        {title: "Couchless in Culver City", path: "CouchlessInCulverCity"},
         {title: "Falling", path: "Falling"},
-        {title: "Waiting", path: "Waiting"},
       ]
     }
   }, []);
