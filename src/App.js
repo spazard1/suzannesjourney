@@ -42,6 +42,11 @@ function App() {
         {title: "St John's Gala", path: "StJohnsGala"},
         {title: "Tribute", path: "Tribute"},
         {title: "Memoriam Presentation", path: "MemoriamPresentation"},
+      ],
+      Hidden: [
+        {title: "Couchless in Culver City", path: "CouchlessInCulverCity"},
+        {title: "Falling", path: "Falling"},
+        {title: "Waiting", path: "Waiting"},
       ]
     }
   }, []);
@@ -75,7 +80,7 @@ function App() {
          <Container>
           <Nav>
               <Nav.Link onClick={() => onClickActiveTitle("")}>Home</Nav.Link>
-              {Object.keys(itemsList).map(item => 
+              {Object.keys(itemsList).filter(item => item !== "Hidden").map(item => 
                 <NavDropdown key={item} title={item} menuVariant="dark">
                   {itemsList[item].map(writtenObject => 
                     <NavDropdown.Item key={writtenObject.title} onClick={() => onClickActiveTitle(writtenObject.path)}>{writtenObject.title}</NavDropdown.Item>
