@@ -21,3 +21,9 @@ body {
   background-attachment: fixed;
   padding-top: 4.5rem;
 }
+
+.dropdown-menu {         
+  max-height: 50vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
